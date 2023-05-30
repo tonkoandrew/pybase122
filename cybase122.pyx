@@ -79,7 +79,7 @@ cdef int cdecode(int i, int curByte, int bitOfByte, int len_strData, bytearray s
             j, curByte, bitOfByte = push7(j, int_strData, curByte, bitOfByte, decoded)
     return j
 
-cpdef bytearray encode(str rawData, bint warnings=True):
+cpdef bytearray encode(bytearray rawData, bint warnings=True):
     cdef int curIndex, curBit, rawDataLen, illegalIndex, kShortened, b1, b2, bits, nextBits
     cdef bytearray firstPart
     cdef int firstBit
