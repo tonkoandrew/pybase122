@@ -91,7 +91,7 @@ cpdef bytearray encode(bytearray rawData, bint warnings=True):
     if isinstance(rawData, str):
         rawDataBytes = bytearray(rawData, "UTF-8")
     elif isinstance(rawData, bytearray):
-        pass
+        rawDataBytes = rawData
     else:
         raise TypeError("rawData must be a string!")
     kShortened = 0b111  # last two-byte char encodes <= 7 bits
