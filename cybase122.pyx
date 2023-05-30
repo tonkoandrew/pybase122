@@ -90,6 +90,8 @@ cpdef bytearray encode(str rawData, bint warnings=True):
         raise NotImplementedError("This hasn't been tested on Python2 yet! Turn this warning off by passing warnings=False.")
     if isinstance(rawData, str):
         rawDataBytes = bytearray(rawData, "UTF-8")
+    elif isinstance(rawData, bytearray):
+        pass
     else:
         raise TypeError("rawData must be a string!")
     kShortened = 0b111  # last two-byte char encodes <= 7 bits

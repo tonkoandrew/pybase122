@@ -14,6 +14,8 @@ def encode(rawData, warnings=True):
         )
     if isinstance(rawData, str):
         rawData = bytearray(rawData, "UTF-8")
+    elif isinstance(rawData, bytearray):
+        pass
     else:
         raise TypeError("rawData must be a string!")
     # null, newline, carriage return, double quote, ampersand, backslash
